@@ -83,7 +83,7 @@ class ExtensionDelegate: NSObject, ObservableObject, WKExtensionDelegate {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 backgroundDataTask = taskRandomFox(completionHandler: { [unowned self] _ in
                     self.scheduleBackgroundRefreshTasks(ceil13MinitesTimeInterval(Date()))
-                    backgroundTask.setTaskCompletedWithSnapshot(true)
+                    backgroundTask.setTaskCompletedWithSnapshot(false)
                     self.backgroundDataTask = nil
                 })
                 backgroundDataTask?.resume()
